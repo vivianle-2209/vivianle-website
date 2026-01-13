@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Fonts for headings + script-like greetings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sacramento&family=Yomogi&family=Potta+One&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vivian Le — Wrapped Portfolio</title>
+  <meta name="description" content="A Wrapped-inspired portfolio with a Spotify-style vinyl player." />
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<!-- Use one of your pattern classes that exists in style.css -->
+<body class="pattern-kawaii">
+
+  <!-- Splash (visible by default; JS hides it if already seen) -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro-inner">
+      <div id="introWord" class="word">Hello</div>
+      <div id="introSub" class="sub"></div>
+      <button id="introSkip" class="skip" aria-label="Skip intro">Skip</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">✦</div>
+        <span>Vivian Le</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="social-rail tiny" aria-label="Social links">
+  <a class="sr-item" href="mailto:vivianle.contact@email.com" aria-label="Email" title="Email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+  <a class="sr-item" href="https://github.com/vivianle-2209" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+    <i class="fa-brands fa-github"></i>
+  </a>
+  <a class="sr-item" href="https://www.linkedin.com/in/vivian-havy-le/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+
+</nav>
+
+
+  <main class="container">
+    <!-- HERO (text left, player right) -->
+    <section class="hero" id="home">
+      <div>
+        <h2>
+          <span id="greetWord" class="greet-inline">Hello</span><span>, I'm</span>
+        </h2>
+
+        <h1 class="hero-name">
+          <span class="highlight">Vivian Le.</span>
+        </h1>
+
+        <h2>
+          <span
+            id="typing"
+            data-words='["Data Analyst","AI Enthusiast","Portfolio Builder","Problem Solver"]'
+            data-speed="85">Data Analyst</span>
+          <span class="cursor" aria-hidden="true">|</span>
+        </h2>
+
+        <p class="lead">
+          I turn messy problems into clean products. Here's my year in numbers—and a few projects I'm proud of.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#my_wrap">My Wrap</a>
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn" href="#experience">Experience</a>
+          <a class="btn" href="#education">Education</a>
+          <a class="btn" href="#more_about_me">More about me</a>
+        </div>
+        
+        <form id="songSearch" class="song-search" autocomplete="off">
+          <span class="icon search" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 0 1 5.47 11.45l4.54 4.54-1.42 1.42-4.54-4.54A7 7 0 1 1 10 3zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+          </span>
+          <input id="songQuery" type="text"
+                 placeholder="Choose your background music"
+                 aria-label="Choose your background music">
+          <button type="submit" class="sr-only">Play</button>
+        </form>
+
+        <!-- Genre options -->
+        <div id="genreRow" class="genre-row" aria-label="Choose a genre">
+          <button class="genre" data-q="R&B" aria-pressed="false">R&amp;B</button>
+          <button class="genre" data-q="Hip Hop" aria-pressed="false">Hip Hop</button>
+          <button class="genre" data-q="Pop" aria-pressed="false">Pop</button>
+          <button class="genre" data-q="Classical" aria-pressed="false">Classical</button>
+          <button class="genre" data-q="Country" aria-pressed="false">Country</button>
+        </div>
+
+        <div id="songSuggest" class="song-suggest" aria-live="polite"></div>
+      </div>
+
+      <!-- PLAYER (right column) -->
+      <div class="card player" id="player">
+        <div class="card-body">
+          <div class="player-top stack">
+            <!-- Tonearm (pink) -->
+            <div class="tonearm" aria-hidden="true">
+              <div class="arm"></div>
+              <div class="head"></div>
+              <div class="pivot"></div>
+            </div>
+
+            <!-- Vinyl -->
+            <div class="vinyl-wrap" title="Click to play/pause">
+              <div class="vinyl" id="vinyl">
+                <img id="cover" src="covers/piano.jpg" alt="Album cover">
+                <div class="notes" id="notes" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <!-- Track text under the vinyl -->
+            <div class="track-info under">
+              <div class="title" id="title">Gymnopédie No. 1</div>
+              <div class="artist" id="artist">Erik Satie</div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls" role="group" aria-label="Player controls">
+            <button class="ctrl ghost" id="shuffle" aria-pressed="false" title="Shuffle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3h4v4h-2V6h-2a4 4 0 0 0-3.42 1.9l-1.1 1.74a6 6 0 0 1-5.11 2.86H4v-2h3.37a4 4 0 0 0 3.42-1.9l1.1-1.74A6 6 0 0 1 17 3zm0 18a6 6 0 0 1-5.11-2.86l-1.1-1.74A4 4 0 0 0 7.37 14H4v-2h3.37a6 6 0 0 1 5.11 2.86l1.1 1.74A4 4 0 0 0 17 19h2v-1h2v4h-4v-2z"/></svg>
+            </button>
+
+            <button class="ctrl ghost" id="prev" title="Previous">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM9 12l11 7V5z"/></svg>
+            </button>
+
+            <button class="ctrl primary round lg" id="play" aria-label="Play/Pause">
+              <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+            </button>
+
+            <button class="ctrl ghost" id="next" title="Next">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7l8 5-8 5V7zm9 10V7h2v10h-2z"/></svg>
+            </button>
+
+            <button class="ctrl ghost" id="repeat" aria-pressed="false" title="Repeat">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h8V5H7a4 4 0 0 0 0 8h10v2H7a6 6 0 0 1 0-12h10V1l4 4-4 4V7z"/></svg>
+            </button>
+          </div>
+
+          <!-- Progress -->
+          <div class="progress">
+            <span id="current">0:00</span>
+            <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek position">
+            <span id="duration">0:00</span>
+          </div>
+
+          <audio id="audio" preload="metadata"></audio>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- MY WRAP STATS -->
+
+  <section id="my_wrap" class="wrap-stats">
+  <div class="container">
+    <h2 class="wrap-title">My Wrap<span class="dot">.</span></h2>
+
+    <div class="stats-row" id="wrapStats">
+      <div class="stat">
+        <div class="value">
+          <span class="num" data-counter data-target="20000" data-divide="1000" data-duration="1600">0</span>
+          <span class="suffix">k+</span>
+        </div>
+        <div class="label">Integrations</div>
+      </div>
+
+      <div class="stat">
+        <div class="value">
+          <span class="num" data-counter data-target="40" data-duration="1400">0</span>
+          <span class="suffix">+</span>
+        </div>
+        <div class="label">Asset classes &amp; growing</div>
+      </div>
+
+      <div class="stat">
+        <div class="value">
+          <span class="num" data-counter data-target="170" data-duration="1600">0</span>
+        </div>
+        <div class="label">Global currencies</div>
+      </div>
+
+      <div class="stat">
+        <div class="value">
+          <span class="num" data-counter data-target="150000" data-divide="1000" data-duration="2000">0</span>
+          <span class="suffix">k+</span>
+        </div>
+        <div class="label">Global instrument valuations</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="wrap-title">My Projects<span class="dot">.</span></h2>
+
+    <ol class="project-list">
+      <!-- Project 1 -->
+      <li class="project" data-reveal>
+        <a class="project__image" href="https://your-live-demo-1.com" target="_blank" rel="noopener">
+          <img src="images/projects/proj1.png" alt="Screenshot of Project One" loading="lazy">
+        </a>
+
+        <div class="project__content">
+          <div class="project__overline">Featured Project</div>
+          <h4 class="project__title">
+            <a href="https://your-live-demo-1.com" target="_blank" rel="noopener">Project One</a>
+          </h4>
+
+          <div class="project__desc card">
+            <div class="card-body">
+              A brief sentence or two that describes what this does, who it helps, and a shiny result.
+            </div>
+          </div>
+
+          <ul class="project__tech">
+            <li>TypeScript</li><li>React</li><li>Vite</li><li>Tailwind</li>
+          </ul>
+
+          <div class="project__links">
+            <a href="https://github.com/you/proj1" class="icon" aria-label="GitHub repo" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.1c-3.35.73-4.06-1.61-4.06-1.61-.55-1.4-1.35-1.78-1.35-1.78-1.1-.74.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.87 2.83 1.33 3.52 1.02.11-.79.42-1.33.76-1.64-2.67-.3-5.48-1.34-5.48-5.98 0-1.32.47-2.4 1.24-3.24-.13-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.86.12 3.16.77.84 1.24 1.92 1.24 3.24 0 4.65-2.81 5.67-5.5 5.97.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.57A12 12 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://your-live-demo-1.com" class="icon" aria-label="External link" title="Live site">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Project 2 (reversed) -->
+      <li class="project project--reverse" data-reveal>
+        <a class="project__image" href="https://your-live-demo-2.com" target="_blank" rel="noopener">
+          <img src="images/projects/proj2.jpg" alt="Screenshot of Project Two" loading="lazy">
+        </a>
+
+        <div class="project__content">
+          <div class="project__overline">Side Project</div>
+          <h4 class="project__title">
+            <a href="https://your-live-demo-2.com" target="_blank" rel="noopener">Project Two</a>
+          </h4>
+
+          <div class="project__desc card">
+            <div class="card-body">
+              Short, scannable description. What’s the trick? What was your role?
+            </div>
+          </div>
+
+          <ul class="project__tech">
+            <li>Python</li><li>FastAPI</li><li>Postgres</li>
+          </ul>
+
+          <div class="project__links">
+            <a href="https://github.com/you/proj2" class="icon" aria-label="GitHub repo" title="GitHub">
+              <!-- same GitHub svg -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.1c-3.35.73-4.06-1.61-4.06-1.61-.55-1.4-1.35-1.78-1.35-1.78-1.1-.74.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.87 2.83 1.33 3.52 1.02.11-.79.42-1.33.76-1.64-2.67-.3-5.48-1.34-5.48-5.98 0-1.32.47-2.4 1.24-3.24-.13-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.86.12 3.16.77.84 1.24 1.92 1.24 3.24 0 4.65-2.81 5.67-5.5 5.97.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.57A12 12 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://your-live-demo-2.com" class="icon" aria-label="External link" title="Live site">
+              <!-- external svg -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Add more <li class="project">…</li> as needed -->
+    </ol>
+  </div>
+</section>
+
+  <section id="projects">
+  <section id="contact" class="contact-section">
+  <div class="container contact-inner">
+    <h2 class="contact-title">Contact<span class="dot">.</span></h2>
+    <p class="contact-lead">
+      Got a question, project, or idea? Let’s chat.
+    </p>
+
+    <form class="contact-form" autocomplete="on">
+      <div class="field">
+        <label for="cname">Name</label>
+        <input id="cname" name="name" type="text" placeholder="Your name" />
+      </div>
+
+      <div class="field">
+        <label for="cemail">Email</label>
+        <input id="cemail" name="email" type="email" placeholder="you@example.com" />
+      </div>
+
+      <div class="field">
+        <label for="cmsg">Message</label>
+        <textarea id="cmsg" name="message" rows="4" placeholder="Tell me a bit about it…"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn contact-btn">Send message</button>
+        <a href="mailto:vivianle.contact@email.com" class="btn contact-btn alt">Email me</a>
+      </div>
+    </form>
+
+    <div class="contact-mini">
+      <span>Prefer socials?</span>
+      <a href="https://github.com/vivianle-2209" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/vivian-havy-le/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+
+  </div>
+  <footer>© <span id="yr">2025</span> Vivian Le. Built with HTML + CSS + JS.</footer>
+
+</section>
+
+</body>
+</html>
