@@ -315,18 +315,5 @@
   io.observe(section);
 })();
 
-/* Projects: reveal on scroll */
-(() => {
-  const items = document.querySelectorAll('.project[data-reveal]');
-  if (!items.length) return;
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if (e.isIntersecting){
-        e.target.classList.add('is-visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.25, rootMargin: '0px 0px -8% 0px' });
-  items.forEach(i => io.observe(i));
-})();
+
 

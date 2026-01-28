@@ -8,7 +8,7 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vivian Le — Wrapped Portfolio</title>
+  <title>Vivian Le Portfolio</title>
   <meta name="description" content="A Wrapped-inspired portfolio with a Spotify-style vinyl player." />
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
@@ -41,7 +41,7 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <a class="btn primary" href="resume.pdf">Resume</a>
+        <a class="btn primary" href="Resume - Vivian Le.pdf" download="Vivian Le Resume.pdf">Resume</a>
       </nav>
     </div>
   </header>
@@ -75,13 +75,13 @@
         <h2>
           <span
             id="typing"
-            data-words='["Data Analyst","AI Enthusiast","Portfolio Builder","Problem Solver"]'
+            data-words='["Data Alchemist","Insight Architect","Creative Technologist","Unconventional Solver"]'
             data-speed="85">Data Analyst</span>
           <span class="cursor" aria-hidden="true">|</span>
         </h2>
 
         <p class="lead">
-          I turn messy problems into clean products. Here's my year in numbers—and a few projects I'm proud of.
+          As a data and AI enthusiast, I am dedicated to transforming complex data into actionable insights that empower smarter decisions, boost efficiency, and accelerate growth.
         </p>
 
         <div class="cta-row">
@@ -89,7 +89,7 @@
           <a class="btn" href="#projects">Projects</a>
           <a class="btn" href="#experience">Experience</a>
           <a class="btn" href="#education">Education</a>
-          <a class="btn" href="#more_about_me">More about me</a>
+          <a class="btn" href="#more-about-me">More about me</a>
         </div>
         
         <form id="songSearch" class="song-search" autocomplete="off">
@@ -97,19 +97,10 @@
             <svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 0 1 5.47 11.45l4.54 4.54-1.42 1.42-4.54-4.54A7 7 0 1 1 10 3zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
           </span>
           <input id="songQuery" type="text"
-                 placeholder="Choose your background music"
+                 placeholder="Type a genre, press Enter to choose my recommended background music 🎶"
                  aria-label="Choose your background music">
           <button type="submit" class="sr-only">Play</button>
         </form>
-
-        <!-- Genre options -->
-        <div id="genreRow" class="genre-row" aria-label="Choose a genre">
-          <button class="genre" data-q="R&B" aria-pressed="false">R&amp;B</button>
-          <button class="genre" data-q="Hip Hop" aria-pressed="false">Hip Hop</button>
-          <button class="genre" data-q="Pop" aria-pressed="false">Pop</button>
-          <button class="genre" data-q="Classical" aria-pressed="false">Classical</button>
-          <button class="genre" data-q="Country" aria-pressed="false">Country</button>
-        </div>
 
         <div id="songSuggest" class="song-suggest" aria-live="polite"></div>
       </div>
@@ -128,7 +119,7 @@
             <!-- Vinyl -->
             <div class="vinyl-wrap" title="Click to play/pause">
               <div class="vinyl" id="vinyl">
-                <img id="cover" src="covers/piano.jpg" alt="Album cover">
+                <img id="cover" src="covers/cover1.jpeg" alt="Album cover">
                 <div class="notes" id="notes" aria-hidden="true"></div>
               </div>
             </div>
@@ -185,10 +176,10 @@
     <div class="stats-row" id="wrapStats">
       <div class="stat">
         <div class="value">
-          <span class="num" data-counter data-target="20000" data-divide="1000" data-duration="1600">0</span>
+          <span class="num" data-counter data-target="100000" data-divide="1000" data-duration="1600">0</span>
           <span class="suffix">k+</span>
         </div>
-        <div class="label">Integrations</div>
+        <div class="label">Data analysed</div>
       </div>
 
       <div class="stat">
@@ -292,10 +283,104 @@
       <!-- Add more <li class="project">…</li> as needed -->
     </ol>
   </div>
+</section>  <!-- end of #projects -->
+<section id="experience" class="xp">
+  <div class="container">
+    <h2 class="wrap-title">Experience<span class="dot">.</span></h2>
+
+    <div class="xp-timeline" aria-label="Experience timeline">
+      <!-- the wavy spine -->
+
+      <!-- 2024 -->
+      <article class="xp-item left">
+        <div class="xp-card">
+          <h3>February - June</h3>
+          <p>Product Analyst Intern, The W Solutions</p>
+        </div>
+        <div class="xp-year">2024</div>
+      </article>
+
+      <!-- 2025 -->
+      <article class="xp-item right">
+        <div class="xp-year">2025</div>
+        <div class="xp-card">
+          <h3>May - October</h3>
+          <p>Data Analyst Intern, KPay Group</p>
+        </div>
+      </article>
+
+      <!-- Add more experience items as needed -->
+      <article class="xp-item left">
+        <div class="xp-card">
+          <h3>June - August</h3>
+          <p>Data Science Intern, FinTech Innovations</p>
+        </div>
+        <div class="xp-year">2025</div>
+      </article>
+
+      <article class="xp-item right">
+        <div class="xp-year">2025</div>
+        <div class="xp-card">
+          <h3>September - December</h3>
+          <p>Business Intelligence Intern, Data Solutions Inc.</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-  <section id="projects">
-  <section id="contact" class="contact-section">
+<section id="more-about-me" class="more-about-me">
+  <div class="card-carousel-container">
+  <div class="card-carousel">
+    <!-- Left arrow -->
+    <div class="arrow-btn arrow-left">&#10094;</div>
+
+    <!-- Cards -->
+    <div class="card active">
+      <img src="image1.jpg" alt="Image 1">
+      <div>Title 1</div>
+      <div>Caption 1</div>
+    </div>
+    <div class="card">
+      <img src="image2.jpg" alt="Image 2">
+      <div>Title 2</div>
+      <div>Caption 2</div>
+    </div>
+    <div class="card">
+      <img src="image3.jpg" alt="Image 3">
+      <div>Title 3</div>
+      <div>Caption 3</div>
+    </div>
+    <div class="card">
+      <img src="image4.jpg" alt="Image 4">
+      <div>Title 4</div>
+      <div>Caption 4</div>
+    </div>
+    <div class="card">
+      <img src="image5.jpg" alt="Image 5">
+      <div>Title 5</div>
+      <div>Caption 5</div>
+    </div>
+    <div class="card">
+      <img src="image6.jpg" alt="Image 6">
+      <div>Title 6</div>
+      <div>Caption 6</div>
+    </div>
+    <div class="card">
+      <img src="image7.jpg" alt="Image 7">
+      <div>Title 7</div>
+      <div>Caption 7</div>
+    </div>
+    
+
+    <!-- Right arrow -->
+    <div class="arrow-btn arrow-right">&#10095;</div>
+  </div>
+</div>
+</section>
+
+
+<section id="contact" class="contact-section">
   <div class="container contact-inner">
     <h2 class="contact-title">Contact<span class="dot">.</span></h2>
     <p class="contact-lead">
@@ -315,7 +400,7 @@
 
       <div class="field">
         <label for="cmsg">Message</label>
-        <textarea id="cmsg" name="message" rows="4" placeholder="Tell me a bit about it…"></textarea>
+        <textarea id="cmsg" name="message" rows="4" placeholder="Leave me anything"></textarea>
       </div>
 
       <div class="actions">
@@ -338,5 +423,6 @@
 
 </section>
 
+<script src="search-toggle.js" defer></script>
 </body>
 </html>
