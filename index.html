@@ -4,7 +4,7 @@
   <!-- Fonts for headings + script-like greetings -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sacramento&family=Yomogi&family=Potta+One&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;700&family=Outfit:wght@700;800;900&family=Pacifico&family=Yomogi&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,8 +23,9 @@
   <!-- Splash (visible by default; JS hides it if already seen) -->
   <div id="intro" class="intro" aria-hidden="true">
     <div class="intro-inner">
-      <div id="introWord" class="word">Hello</div>
-      <div id="introSub" class="sub"></div>
+      <div class="intro-tagline" id="introTagline"></div>
+      <div class="intro-headline" id="introHeadline"></div>
+      <div id="introParticles" class="intro-particles" aria-hidden="true"></div>
       <button id="introSkip" class="skip" aria-label="Skip intro">Skip</button>
     </div>
   </div>
@@ -41,8 +42,12 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <a class="btn primary" href="Resume - Vivian Le.pdf" download="Vivian Le Resume.pdf">Resume</a>
+        <a class="btn primary" href="Vivian Le Resume.pdf" download="Vivian Le Resume.pdf">Resume</a>
       </nav>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -81,7 +86,7 @@
         </h2>
 
         <p class="lead">
-          As a data and AI enthusiast, I am dedicated to transforming complex data into actionable insights that empower smarter decisions, boost efficiency, and accelerate growth.
+          I’m someone who loves finding meaning in messy data and turning it into ideas that feel clear, useful, and exciting.
         </p>
 
         <div class="cta-row">
@@ -173,37 +178,83 @@
   <div class="container">
     <h2 class="wrap-title">My Wrap<span class="dot">.</span></h2>
 
-    <div class="stats-row" id="wrapStats">
-      <div class="stat">
-        <div class="value">
-          <span class="num" data-counter data-target="100000" data-divide="1000" data-duration="1600">0</span>
-          <span class="suffix">k+</span>
+    <div class="stats-groups" id="wrapStats">
+
+      <!-- Row 1: Journey -->
+      <div class="stats-group">
+        <div class="stats-group-label">Journey</div>
+        <div class="stats-row">
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="5" data-duration="900">0</span>
+            </div>
+            <div class="label">Positions held</div>
+          </div>
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="3" data-duration="800">0</span>
+            </div>
+            <div class="label">Industries explored</div>
+          </div>
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="10" data-duration="1100">0</span>
+              <span class="suffix">+</span>
+            </div>
+            <div class="label">Tools obtained</div>
+          </div>
         </div>
-        <div class="label">Data analysed</div>
       </div>
 
-      <div class="stat">
-        <div class="value">
-          <span class="num" data-counter data-target="40" data-duration="1400">0</span>
-          <span class="suffix">+</span>
+      <!-- Row 2: Impact -->
+      <div class="stats-group">
+        <div class="stats-group-label">Impact</div>
+        <div class="stats-row">
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="150000" data-divide="1000" data-duration="1800">0</span>
+              <span class="suffix">k+</span>
+            </div>
+            <div class="label">Data points analysed</div>
+          </div>
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="10" data-duration="1200">0</span>
+              <span class="suffix">+</span>
+            </div>
+            <div class="label">Dashboards delivered</div>
+          </div>
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="5" data-duration="1000">0</span>
+              <span class="suffix">+</span>
+            </div>
+            <div class="label">AI agentic workflows built</div>
+          </div>
         </div>
-        <div class="label">Asset classes &amp; growing</div>
       </div>
 
-      <div class="stat">
-        <div class="value">
-          <span class="num" data-counter data-target="170" data-duration="1600">0</span>
+      <!-- Row 3: Recognition -->
+      <div class="stats-group">
+        <div class="stats-group-label">Recognition</div>
+        <div class="stats-row">
+          <div class="stat">
+            <div class="value">
+              <span class="stat-prefix">Top&nbsp;</span>
+              <span class="num" data-counter data-target="10" data-duration="1100">0</span>
+            </div>
+            <div class="label">In 2 university subjects</div>
+          </div>
+          <div class="stat">
+            <div class="value">
+              <span class="num" data-counter data-target="4" data-duration="900">0</span>
+              <span class="suffix">/4</span>
+            </div>
+            <div class="label">Case competition podiums</div>
+          </div>
         </div>
-        <div class="label">Global currencies</div>
       </div>
 
-      <div class="stat">
-        <div class="value">
-          <span class="num" data-counter data-target="150000" data-divide="1000" data-duration="2000">0</span>
-          <span class="suffix">k+</span>
-        </div>
-        <div class="label">Global instrument valuations</div>
-      </div>
     </div>
   </div>
 </section>
@@ -289,43 +340,146 @@
     <h2 class="wrap-title">Experience<span class="dot">.</span></h2>
 
     <div class="xp-timeline" aria-label="Experience timeline">
-      <!-- the wavy spine -->
-
-      <!-- 2024 -->
-      <article class="xp-item left">
+      <!-- LEFT: Feb–Jun 2024 -->
+      <article class="xp-item" data-start="2024-02" data-end="2024-06" data-side="left">
         <div class="xp-card">
-          <h3>February - June</h3>
-          <p>Product Analyst Intern, The W Solutions</p>
-        </div>
-        <div class="xp-year">2024</div>
-      </article>
-
-      <!-- 2025 -->
-      <article class="xp-item right">
-        <div class="xp-year">2025</div>
-        <div class="xp-card">
-          <h3>May - October</h3>
-          <p>Data Analyst Intern, KPay Group</p>
+          <h3>February 2024 - June 2024</h3>
+          <p class="xp-role">Product Analyst Intern</p>
+          <p class="xp-company">The W Solutions</p>
         </div>
       </article>
-
-      <!-- Add more experience items as needed -->
-      <article class="xp-item left">
+      <!-- LEFT: Sep 2025 – Apr 2026 (long, spans year boundary) -->
+      <article class="xp-item" data-start="2025-09" data-end="2026-04" data-side="left">
         <div class="xp-card">
-          <h3>June - August</h3>
-          <p>Data Science Intern, FinTech Innovations</p>
+          <h3>Sep 2025 - Present</h3>
+          <p class="xp-role">Research Assistant</p>
+          <p class="xp-company">University of New South Wales</p>
         </div>
-        <div class="xp-year">2025</div>
       </article>
-
-      <article class="xp-item right">
-        <div class="xp-year">2025</div>
+      <!-- RIGHT: May – Oct 2025 -->
+      <article class="xp-item" data-start="2025-05" data-end="2025-10" data-side="right">
         <div class="xp-card">
-          <h3>September - December</h3>
-          <p>Business Intelligence Intern, Data Solutions Inc.</p>
+          <h3>May 2025 - October 2025</h3>
+          <p class="xp-role">Data Analyst Intern</p>
+          <p class="xp-company">KPay Group</p>
+        </div>
+      </article>
+      <!-- RIGHT: Nov 2025 – Jan 2026 (sequential after May–Oct) -->
+      <article class="xp-item" data-start="2025-11" data-end="2026-01" data-side="right">
+        <div class="xp-card">
+          <h3>Nov 2025 - Jan 2026</h3>
+          <p class="xp-role">AI Engineer Intern</p>
+          <p class="xp-company">Docy AI</p>
+        </div>
+      </article>
+      <!-- RIGHT: Feb – Apr 2026 (sequential after Nov–Jan) -->
+      <article class="xp-item" data-start="2026-02" data-end="2026-04" data-side="right" data-company="van-cleef">
+        <div class="xp-card">
+          <h3>February 2026 – Present</h3>
+          <p class="xp-role">Insights Analyst Intern</p>
+          <p class="xp-company">Van Cleef & Arpels</p>
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<section id="education" class="edu">
+  <div class="container">
+    <h2 class="wrap-title">Education<span class="dot">.</span></h2>
+
+    <div class="edu-split" data-reveal>
+
+      <!-- Left: vertical timeline nodes -->
+      <div class="edu-timeline">
+        <div class="edu-spine"></div>
+        <button class="edu-node active" data-target="edu-master">
+          <span class="edu-node-dot"></span>
+          <div class="edu-node-meta">
+            <span class="edu-node-years">2025 – 2026</span>
+            <span class="edu-node-label">Master of Commerce</span>
+          </div>
+        </button>
+        <button class="edu-node" data-target="edu-bachelor">
+          <span class="edu-node-dot"></span>
+          <div class="edu-node-meta">
+            <span class="edu-node-years">2022 – 2025</span>
+            <span class="edu-node-label">Bachelor of Commerce</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Right: swappable detail panel -->
+      <div class="edu-panel-wrap">
+
+        <div class="edu-panel active" id="edu-master">
+          <div class="edu-panel-header">
+            <span class="edu-badge">Master</span>
+            <span class="edu-dates">Aug 2025 – Nov 2026</span>
+          </div>
+          <h3 class="edu-degree">Master of Commerce</h3>
+          <p class="edu-field">Data Analytics for Business</p>
+          <p class="edu-uni">University of Sydney</p>
+          <ul class="edu-highlights">
+            <li>Student Representative for CSYS5040: Criticality in Dynamical Systems, S2 2025</li>
+            <li>Business School Postgraduate Peer Mentor, S1 2026</li>
+            <li>Business School International Scholarship for High Academic Merits 2025</li>
+            <li>Sydney International Student Award 2025</li>
+          </ul>
+        </div>
+
+        <div class="edu-panel" id="edu-bachelor">
+          <div class="edu-panel-header">
+            <span class="edu-badge">Bachelor</span>
+            <span class="edu-dates">Jul 2022 – Jun 2025</span>
+          </div>
+          <h3 class="edu-degree">Bachelor of Commerce</h3>
+          <p class="edu-field">Business Information Systems &amp; Data Science</p>
+          <p class="edu-uni">University of Sydney</p>
+          <ul class="edu-highlights">
+            <li>Ranked <strong>4th</strong> in Data Structures &amp; Algorithms <span class="edu-score">(90)</span></li>
+            <li>Ranked <strong>7th</strong> in Data Governance &amp; Technology Assurance <span class="edu-score">(75)</span></li>
+            <li>Vice-Chancellor’s International Scholarship 2022</li>
+            <li>Sydney International Student Award 2022</li>
+            <li>Dalyell Scholars 2022</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Competition trophies -->
+    <div class="edu-trophies">
+      <div class="edu-trophy" data-reveal>
+        <span class="edu-trophy-place">2nd</span>
+        <div class="edu-trophy-info">
+          <span class="edu-trophy-name">SCC × Business School Case Competition</span>
+          <span class="edu-trophy-year">2026</span>
+        </div>
+      </div>
+      <div class="edu-trophy" data-reveal>
+        <span class="edu-trophy-place">3rd</span>
+        <div class="edu-trophy-info">
+          <span class="edu-trophy-name">Make a Real Difference (MARD) Competition</span>
+          <span class="edu-trophy-year">2025</span>
+        </div>
+      </div>
+      <div class="edu-trophy" data-reveal>
+        <span class="edu-trophy-place">2nd</span>
+        <div class="edu-trophy-info">
+          <span class="edu-trophy-name">Microsoft × USYD Case Competition</span>
+          <span class="edu-trophy-year">2024 · invited to Microsoft HQ</span>
+        </div>
+      </div>
+      <div class="edu-trophy" data-reveal>
+        <span class="edu-trophy-place">4th</span>
+        <div class="edu-trophy-info">
+          <span class="edu-trophy-name">UAVS Hackathon</span>
+          <span class="edu-trophy-year">2023</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
