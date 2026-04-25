@@ -181,7 +181,7 @@
     <div class="stats-groups" id="wrapStats">
 
       <!-- Row 1: Journey -->
-      <div class="stats-group">
+      <div class="stats-group stats-group--journey">
         <div class="stats-group-label">Journey</div>
         <div class="stats-row">
           <div class="stat">
@@ -207,7 +207,7 @@
       </div>
 
       <!-- Row 2: Impact -->
-      <div class="stats-group">
+      <div class="stats-group stats-group--impact">
         <div class="stats-group-label">Impact</div>
         <div class="stats-row">
           <div class="stat">
@@ -235,9 +235,9 @@
       </div>
 
       <!-- Row 3: Recognition -->
-      <div class="stats-group">
+      <div class="stats-group stats-group--recognition">
         <div class="stats-group-label">Recognition</div>
-        <div class="stats-row">
+        <div class="stats-row stats-row--two">
           <div class="stat">
             <div class="value">
               <span class="stat-prefix">Top&nbsp;</span>
@@ -484,53 +484,172 @@
 </section>
 
 <section id="more-about-me" class="more-about-me">
-  <div class="card-carousel-container">
-  <div class="card-carousel">
-    <!-- Left arrow -->
-    <div class="arrow-btn arrow-left">&#10094;</div>
+  <div class="container">
+    <h2 class="wrap-title">More about me<span class="dot">.</span></h2>
+    <div class="about-carousel" data-about-carousel>
+      <button class="about-carousel__arrow about-carousel__arrow--prev" type="button" aria-label="Previous card">
+        <svg viewBox="0 0 180 180" aria-hidden="true"><path d="M119 47.3166C119 48.185 118.668 48.9532 118.003 49.6212L78.8385 89L118.003 128.379C118.668 129.047 119 129.815 119 130.683C119 131.552 118.668 132.32 118.003 132.988L113.021 137.998C112.356 138.666 111.592 139 110.729 139C109.865 139 109.101 138.666 108.436 137.998L61.9966 91.3046C61.3322 90.6366 61 89.8684 61 89C61 88.1316 61.3322 87.3634 61.9966 86.6954L108.436 40.002C109.101 39.334 109.865 39 110.729 39C111.592 39 112.356 39.334 113.021 40.002L118.003 45.012C118.668 45.68 119 46.4482 119 47.3166Z"/></svg>
+      </button>
 
-    <!-- Cards -->
-    <div class="card active">
-      <img src="image1.jpg" alt="Image 1">
-      <div>Title 1</div>
-      <div>Caption 1</div>
-    </div>
-    <div class="card">
-      <img src="image2.jpg" alt="Image 2">
-      <div>Title 2</div>
-      <div>Caption 2</div>
-    </div>
-    <div class="card">
-      <img src="image3.jpg" alt="Image 3">
-      <div>Title 3</div>
-      <div>Caption 3</div>
-    </div>
-    <div class="card">
-      <img src="image4.jpg" alt="Image 4">
-      <div>Title 4</div>
-      <div>Caption 4</div>
-    </div>
-    <div class="card">
-      <img src="image5.jpg" alt="Image 5">
-      <div>Title 5</div>
-      <div>Caption 5</div>
-    </div>
-    <div class="card">
-      <img src="image6.jpg" alt="Image 6">
-      <div>Title 6</div>
-      <div>Caption 6</div>
-    </div>
-    <div class="card">
-      <img src="image7.jpg" alt="Image 7">
-      <div>Title 7</div>
-      <div>Caption 7</div>
-    </div>
+      <div class="about-carousel__viewport" aria-live="polite">
+        <div class="about-carousel__track">
+          <article class="about-card" tabindex="0" aria-label="Card 1 of 10">
+            <div class="about-card__media about-card__media--systems">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">VL</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">01</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Systems thinker</h3>
+              <p>I like finding the structure underneath messy workflows, then making it feel obvious.</p>
+            </div>
+          </article>
 
+          <article class="about-card" tabindex="0" aria-label="Card 2 of 10">
+            <div class="about-card__media about-card__media--analysis">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">DA</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">02</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Data with personality</h3>
+              <p>I care about dashboards and analysis feeling clear, elegant, and actually useful.</p>
+            </div>
+          </article>
 
-    <!-- Right arrow -->
-    <div class="arrow-btn arrow-right">&#10095;</div>
+          <article class="about-card" tabindex="0" aria-label="Card 3 of 10">
+            <div class="about-card__media about-card__media--creative">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">AI</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">03</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Creative builder</h3>
+              <p>I enjoy turning small ideas into polished experiments across AI, automation, and design.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 4 of 10">
+            <div class="about-card__media about-card__media--team">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">TE</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">04</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Calm in teams</h3>
+              <p>I like collaborative work where ideas sharpen through iteration, not noise.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 5 of 10">
+            <div class="about-card__media about-card__media--curious">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">CQ</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">05</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Quietly curious</h3>
+              <p>I am usually happiest learning something new, then figuring out how to apply it well.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 6 of 10">
+            <div class="about-card__media about-card__media--craft">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">UX</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">06</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Design-minded</h3>
+              <p>I notice details quickly and like interfaces that feel polished without becoming loud.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 7 of 10">
+            <div class="about-card__media about-card__media--strategy">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">ST</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">07</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Strategic by default</h3>
+              <p>I naturally think about tradeoffs, priorities, and what will actually make the biggest difference.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 8 of 10">
+            <div class="about-card__media about-card__media--curation">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">CM</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">08</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Curated taste</h3>
+              <p>I like work that is not only functional, but also has rhythm, balance, and a point of view.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 9 of 10">
+            <div class="about-card__media about-card__media--momentum">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">MV</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">09</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Momentum matters</h3>
+              <p>I prefer steady progress, fast feedback, and building things people can react to early.</p>
+            </div>
+          </article>
+
+          <article class="about-card" tabindex="0" aria-label="Card 10 of 10">
+            <div class="about-card__media about-card__media--vision">
+              <div class="about-card__image about-card__image--base">
+                <span class="about-card__monogram">FV</span>
+              </div>
+              <div class="about-card__image about-card__image--hover">
+                <span class="about-card__signal">10</span>
+              </div>
+            </div>
+            <div class="about-card__body">
+              <h3>Future-focused</h3>
+              <p>I am especially interested in where AI, data, and thoughtful product design meet.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button class="about-carousel__arrow about-carousel__arrow--next" type="button" aria-label="Next card">
+        <svg viewBox="0 0 180 180" aria-hidden="true"><path d="M61 47.3166C61 48.185 61.3322 48.9532 61.9966 49.6212L101.161 89L61.9966 128.379C61.3322 129.047 61 129.815 61 130.683C61 131.552 61.3322 132.32 61.9966 132.988L66.979 137.998C67.6434 138.666 68.4078 139 69.2714 139C70.135 139 70.8994 138.666 71.5638 137.998L118.003 91.3046C118.668 90.6366 119 89.8684 119 89C119 88.1316 118.668 87.3634 118.003 86.6954L71.5638 40.002C70.8994 39.334 70.135 39 69.2714 39C68.4078 39 67.6434 39.334 66.979 40.002L61.9966 45.012C61.3322 45.68 61 46.4482 61 47.3166Z"/></svg>
+      </button>
+    </div>
   </div>
-</div>
 </section>
 
 
