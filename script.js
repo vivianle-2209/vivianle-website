@@ -420,10 +420,32 @@
     node.addEventListener('click', () => {
       const targetId = node.dataset.target;
       document.querySelectorAll('.edu-node').forEach(n => n.classList.remove('active'));
-      document.querySelectorAll('.edu-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.edu-panel').forEach(p => {
+        p.classList.remove('active', 'is-flipped');
+        p.querySelectorAll('[data-edu-flip-toggle]').forEach(btn => {
+          btn.setAttribute('aria-expanded', 'false');
+        });
+        p.querySelectorAll('.edu-face--back').forEach(face => {
+          face.setAttribute('aria-hidden', 'true');
+        });
+      });
       node.classList.add('active');
       const panel = document.getElementById(targetId);
       if (panel) panel.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('[data-edu-flip-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.closest('.edu-panel');
+      if (!panel) return;
+      const isFlipped = panel.classList.toggle('is-flipped');
+      panel.querySelectorAll('[data-edu-flip-toggle]').forEach(toggle => {
+        toggle.setAttribute('aria-expanded', String(isFlipped));
+      });
+      panel.querySelectorAll('.edu-face--back').forEach(face => {
+        face.setAttribute('aria-hidden', String(!isFlipped));
+      });
     });
   });
 })();

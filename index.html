@@ -172,6 +172,40 @@
       </div>
     </section>
   </main>
+  <section class="story-intro" id="story-intro">
+    <div class="container">
+      <div class="story-intro__header">
+        <span class="story-intro__eyebrow">A little more context</span>
+        <h2 class="story-intro__title">I like making complex things feel clear, useful, and considered.</h2>
+        <p class="story-intro__lead">
+          My interest usually starts where ambiguity, systems, and people overlap. I am most engaged when I can turn scattered information into a structured direction, then shape it into something that feels elegant to use.
+        </p>
+      </div>
+
+      <div class="story-intro__grid">
+        <article class="story-intro__panel">
+          <span class="story-intro__label">What drives me</span>
+          <p>
+            I am drawn to work that begins messy. A vague problem, too many moving parts, unclear decisions, or data that does not yet say anything useful.
+          </p>
+        </article>
+
+        <article class="story-intro__panel">
+          <span class="story-intro__label">How I work</span>
+          <p>
+            I usually move by finding the structure first, then refining the communication. I care about logic, but I also care about whether the outcome feels intuitive to someone else.
+          </p>
+        </article>
+
+        <article class="story-intro__panel">
+          <span class="story-intro__label">What I am building toward</span>
+          <p>
+            The kind of work I want to keep doing sits between analytics, product thinking, and creative problem-solving. I like building systems that are both rigorous and human.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
   <!-- MY WRAP STATS -->
 
   <section id="my_wrap" class="wrap-stats">
@@ -337,7 +371,7 @@
 </section>  <!-- end of #projects -->
 <section id="experience" class="xp">
   <div class="container">
-    <h2 class="wrap-title">Experience<span class="dot">.</span></h2>
+    <h2 class="wrap-title">My Journey<span class="dot">.</span></h2>
 
     <div class="xp-timeline" aria-label="Experience timeline">
       <!-- LEFT: Feb–Jun 2024 -->
@@ -390,7 +424,6 @@
 
     <div class="edu-split" data-reveal>
 
-      <!-- Left: vertical timeline nodes -->
       <div class="edu-timeline">
         <div class="edu-spine"></div>
         <button class="edu-node active" data-target="edu-master">
@@ -409,46 +442,109 @@
         </button>
       </div>
 
-      <!-- Right: swappable detail panel -->
       <div class="edu-panel-wrap">
-
         <div class="edu-panel active" id="edu-master">
-          <div class="edu-panel-header">
-            <span class="edu-badge">Master</span>
-            <span class="edu-dates">Aug 2025 – Nov 2026</span>
+          <div class="edu-flip-card">
+            <div class="edu-face edu-face--front">
+              <div class="edu-panel-header">
+                <span class="edu-badge">Master</span>
+                <span class="edu-dates">Aug 2025 – Nov 2026</span>
+              </div>
+              <h3 class="edu-degree">Master of Commerce</h3>
+              <p class="edu-field">Data Analytics for Business</p>
+              <p class="edu-uni">University of Sydney</p>
+              <ul class="edu-highlights">
+                <li>Student Representative for CSYS5040: Criticality in Dynamical Systems, S2 2025</li>
+                <li>Business School Postgraduate Peer Mentor, S1 2026</li>
+                <li>Business School International Scholarship for High Academic Merits 2025</li>
+                <li>Sydney International Student Award 2025</li>
+              </ul>
+              <button class="edu-flip-toggle" type="button" data-edu-flip-toggle aria-expanded="false">More detail</button>
+            </div>
+            <div class="edu-face edu-face--back" aria-hidden="true">
+              <div class="edu-panel-header">
+                <span class="edu-badge">Master details</span>
+                <span class="edu-dates">Current focus</span>
+              </div>
+              <h3 class="edu-degree">What this degree adds</h3>
+              <div class="edu-detail-grid">
+                <div class="edu-detail-block">
+                  <h4>Academic direction</h4>
+                  <p>Postgraduate training in analytics for business decisions, with stronger emphasis on structured problem framing and applied quantitative thinking.</p>
+                </div>
+                <div class="edu-detail-block">
+                  <h4>Leadership and service</h4>
+                  <ul>
+                    <li>Student Representative for CSYS5040</li>
+                    <li>Business School Postgraduate Peer Mentor</li>
+                  </ul>
+                </div>
+                <div class="edu-detail-block">
+                  <h4>Recognition</h4>
+                  <ul>
+                    <li>Business School International Scholarship for High Academic Merits 2025</li>
+                    <li>Sydney International Student Award 2025</li>
+                  </ul>
+                </div>
+              </div>
+              <button class="edu-flip-toggle edu-flip-toggle--back" type="button" data-edu-flip-toggle aria-expanded="true">Back</button>
+            </div>
           </div>
-          <h3 class="edu-degree">Master of Commerce</h3>
-          <p class="edu-field">Data Analytics for Business</p>
-          <p class="edu-uni">University of Sydney</p>
-          <ul class="edu-highlights">
-            <li>Student Representative for CSYS5040: Criticality in Dynamical Systems, S2 2025</li>
-            <li>Business School Postgraduate Peer Mentor, S1 2026</li>
-            <li>Business School International Scholarship for High Academic Merits 2025</li>
-            <li>Sydney International Student Award 2025</li>
-          </ul>
         </div>
 
         <div class="edu-panel" id="edu-bachelor">
-          <div class="edu-panel-header">
-            <span class="edu-badge">Bachelor</span>
-            <span class="edu-dates">Jul 2022 – Jun 2025</span>
+          <div class="edu-flip-card">
+            <div class="edu-face edu-face--front">
+              <div class="edu-panel-header">
+                <span class="edu-badge">Bachelor</span>
+                <span class="edu-dates">Jul 2022 – Jun 2025</span>
+              </div>
+              <h3 class="edu-degree">Bachelor of Commerce</h3>
+              <p class="edu-field">Business Information Systems &amp; Data Science</p>
+              <p class="edu-uni">University of Sydney</p>
+              <ul class="edu-highlights">
+                <li>Ranked <strong>4th</strong> in Data Structures &amp; Algorithms <span class="edu-score">(90)</span></li>
+                <li>Ranked <strong>7th</strong> in Data Governance &amp; Technology Assurance <span class="edu-score">(75)</span></li>
+                <li>Vice-Chancellor’s International Scholarship 2022</li>
+                <li>Sydney International Student Award 2022</li>
+                <li>Dalyell Scholars 2022</li>
+              </ul>
+              <button class="edu-flip-toggle" type="button" data-edu-flip-toggle aria-expanded="false">More detail</button>
+            </div>
+            <div class="edu-face edu-face--back" aria-hidden="true">
+              <div class="edu-panel-header">
+                <span class="edu-badge">Bachelor details</span>
+                <span class="edu-dates">Foundation</span>
+              </div>
+              <h3 class="edu-degree">What this degree built</h3>
+              <div class="edu-detail-grid">
+                <div class="edu-detail-block">
+                  <h4>Study blend</h4>
+                  <p>A combined foundation across business systems, data thinking, and the technical side of information work.</p>
+                </div>
+                <div class="edu-detail-block">
+                  <h4>Academic results</h4>
+                  <ul>
+                    <li>4th in Data Structures &amp; Algorithms (90)</li>
+                    <li>7th in Data Governance &amp; Technology Assurance (75)</li>
+                  </ul>
+                </div>
+                <div class="edu-detail-block">
+                  <h4>Scholarships and programs</h4>
+                  <ul>
+                    <li>Vice-Chancellor’s International Scholarship 2022</li>
+                    <li>Sydney International Student Award 2022</li>
+                    <li>Dalyell Scholars 2022</li>
+                  </ul>
+                </div>
+              </div>
+              <button class="edu-flip-toggle edu-flip-toggle--back" type="button" data-edu-flip-toggle aria-expanded="true">Back</button>
+            </div>
           </div>
-          <h3 class="edu-degree">Bachelor of Commerce</h3>
-          <p class="edu-field">Business Information Systems &amp; Data Science</p>
-          <p class="edu-uni">University of Sydney</p>
-          <ul class="edu-highlights">
-            <li>Ranked <strong>4th</strong> in Data Structures &amp; Algorithms <span class="edu-score">(90)</span></li>
-            <li>Ranked <strong>7th</strong> in Data Governance &amp; Technology Assurance <span class="edu-score">(75)</span></li>
-            <li>Vice-Chancellor’s International Scholarship 2022</li>
-            <li>Sydney International Student Award 2022</li>
-            <li>Dalyell Scholars 2022</li>
-          </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- Competition trophies -->
     <div class="edu-trophies">
       <div class="edu-trophy" data-reveal>
         <span class="edu-trophy-place">2nd</span>
@@ -467,7 +563,7 @@
       <div class="edu-trophy" data-reveal>
         <span class="edu-trophy-place">2nd</span>
         <div class="edu-trophy-info">
-          <span class="edu-trophy-name">Microsoft × USYD Case Competition</span>
+          <span class="edu-trophy-name">Microsoft × US Case Competition</span>
           <span class="edu-trophy-year">2024 · invited to Microsoft HQ</span>
         </div>
       </div>
@@ -482,7 +578,6 @@
 
   </div>
 </section>
-
 <section id="more-about-me" class="more-about-me">
   <div class="container">
     <h2 class="wrap-title">More about me<span class="dot">.</span></h2>
@@ -495,158 +590,88 @@
         <div class="about-carousel__track">
           <article class="about-card" tabindex="0" aria-label="Card 1 of 10">
             <div class="about-card__media about-card__media--systems">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">VL</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">01</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">VL</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">01</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Systems thinker</h3>
-              <p>I like finding the structure underneath messy workflows, then making it feel obvious.</p>
-            </div>
+            <div class="about-card__body"><h3>Systems thinker</h3><p>I like finding the structure underneath messy workflows, then making it feel obvious.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 2 of 10">
             <div class="about-card__media about-card__media--analysis">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">DA</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">02</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">DA</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">02</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Data with personality</h3>
-              <p>I care about dashboards and analysis feeling clear, elegant, and actually useful.</p>
-            </div>
+            <div class="about-card__body"><h3>Data with personality</h3><p>I care about dashboards and analysis feeling clear, elegant, and actually useful.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 3 of 10">
             <div class="about-card__media about-card__media--creative">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">AI</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">03</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">AI</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">03</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Creative builder</h3>
-              <p>I enjoy turning small ideas into polished experiments across AI, automation, and design.</p>
-            </div>
+            <div class="about-card__body"><h3>Creative with structure</h3><p>I enjoy work that needs both clear reasoning and a sense of taste.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 4 of 10">
             <div class="about-card__media about-card__media--team">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">TE</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">04</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">TM</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">04</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Calm in teams</h3>
-              <p>I like collaborative work where ideas sharpen through iteration, not noise.</p>
-            </div>
+            <div class="about-card__body"><h3>Comfortable across teams</h3><p>I like translating between business context, technical work, and human needs.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 5 of 10">
             <div class="about-card__media about-card__media--curious">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">CQ</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">05</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">CQ</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">05</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Quietly curious</h3>
-              <p>I am usually happiest learning something new, then figuring out how to apply it well.</p>
-            </div>
+            <div class="about-card__body"><h3>Curiosity-led</h3><p>I usually start by asking better questions before I rush into building an answer.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 6 of 10">
             <div class="about-card__media about-card__media--craft">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">UX</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">06</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">UX</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">06</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Design-minded</h3>
-              <p>I notice details quickly and like interfaces that feel polished without becoming loud.</p>
-            </div>
+            <div class="about-card__body"><h3>Care for the finish</h3><p>I notice presentation, flow, and whether something feels polished enough to trust.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 7 of 10">
             <div class="about-card__media about-card__media--strategy">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">ST</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">07</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">ST</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">07</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Strategic by default</h3>
-              <p>I naturally think about tradeoffs, priorities, and what will actually make the biggest difference.</p>
-            </div>
+            <div class="about-card__body"><h3>Strategic by instinct</h3><p>I like stepping back to see the wider pattern before narrowing into execution.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 8 of 10">
             <div class="about-card__media about-card__media--curation">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">CM</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">08</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">CT</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">08</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Curated taste</h3>
-              <p>I like work that is not only functional, but also has rhythm, balance, and a point of view.</p>
-            </div>
+            <div class="about-card__body"><h3>Thoughtful curation</h3><p>I prefer selecting the right signal over flooding a page or decision with too much noise.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 9 of 10">
             <div class="about-card__media about-card__media--momentum">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">MV</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">09</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">GO</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">09</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Momentum matters</h3>
-              <p>I prefer steady progress, fast feedback, and building things people can react to early.</p>
-            </div>
+            <div class="about-card__body"><h3>Built for momentum</h3><p>I like work that moves ideas forward, not just work that documents them.</p></div>
           </article>
 
           <article class="about-card" tabindex="0" aria-label="Card 10 of 10">
             <div class="about-card__media about-card__media--vision">
-              <div class="about-card__image about-card__image--base">
-                <span class="about-card__monogram">FV</span>
-              </div>
-              <div class="about-card__image about-card__image--hover">
-                <span class="about-card__signal">10</span>
-              </div>
+              <div class="about-card__image about-card__image--base"><span class="about-card__monogram">VS</span></div>
+              <div class="about-card__image about-card__image--hover"><span class="about-card__signal">10</span></div>
             </div>
-            <div class="about-card__body">
-              <h3>Future-focused</h3>
-              <p>I am especially interested in where AI, data, and thoughtful product design meet.</p>
-            </div>
+            <div class="about-card__body"><h3>Always shaping forward</h3><p>I am interested in becoming the kind of person who can connect insight, systems, and creativity well.</p></div>
           </article>
         </div>
       </div>
 
       <button class="about-carousel__arrow about-carousel__arrow--next" type="button" aria-label="Next card">
-        <svg viewBox="0 0 180 180" aria-hidden="true"><path d="M61 47.3166C61 48.185 61.3322 48.9532 61.9966 49.6212L101.161 89L61.9966 128.379C61.3322 129.047 61 129.815 61 130.683C61 131.552 61.3322 132.32 61.9966 132.988L66.979 137.998C67.6434 138.666 68.4078 139 69.2714 139C70.135 139 70.8994 138.666 71.5638 137.998L118.003 91.3046C118.668 90.6366 119 89.8684 119 89C119 88.1316 118.668 87.3634 118.003 86.6954L71.5638 40.002C70.8994 39.334 70.135 39 69.2714 39C68.4078 39 67.6434 39.334 66.979 40.002L61.9966 45.012C61.3322 45.68 61 46.4482 61 47.3166Z"/></svg>
+        <svg viewBox="0 0 180 180" aria-hidden="true"><path d="M119 47.3166C119 48.185 118.668 48.9532 118.003 49.6212L78.8385 89L118.003 128.379C118.668 129.047 119 129.815 119 130.683C119 131.552 118.668 132.32 118.003 132.988L113.021 137.998C112.356 138.666 111.592 139 110.729 139C109.865 139 109.101 138.666 108.436 137.998L61.9966 91.3046C61.3322 90.6366 61 89.8684 61 89C61 88.1316 61.3322 87.3634 61.9966 86.6954L108.436 40.002C109.101 39.334 109.865 39 110.729 39C111.592 39 112.356 39.334 113.021 40.002L118.003 45.012C118.668 45.68 119 46.4482 119 47.3166Z"/></svg>
       </button>
     </div>
   </div>
@@ -699,3 +724,5 @@
 <script src="search-toggle.js" defer></script>
 </body>
 </html>
+
+
