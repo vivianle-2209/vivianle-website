@@ -863,6 +863,18 @@ if (leftBtn && rightBtn && carouselInner && totalItems) {
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
   if (!sections.length) return;
 
+  function getSectionScrollTarget(target) {
+    const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 60;
+    const extra = 10;
+    const heading =
+      target.querySelector('.wrap-title') ||
+      target.querySelector('.story-intro__header') ||
+      target.querySelector('h1, h2, h3');
+    const anchor = heading || target;
+    const top = window.scrollY + anchor.getBoundingClientRect().top - navH - extra;
+    return Math.max(0, top);
+  }
+
   function setOpen(open) {
     shell.classList.toggle('is-open', open);
     rail.hidden = !open;
@@ -884,7 +896,10 @@ if (leftBtn && rightBtn && carouselInner && totalItems) {
       const target = document.getElementById(id);
       if (!target) return;
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.scrollTo({
+        top: getSectionScrollTarget(target),
+        behavior: 'smooth'
+      });
       setActive(id);
       setOpen(false);
     });
