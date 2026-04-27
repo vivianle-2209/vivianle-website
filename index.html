@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <!-- Fonts for headings + script-like greetings -->
@@ -34,7 +34,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand">
-        <div class="brand-badge" aria-hidden="true">✦</div>
+        <div class="brand-badge" aria-hidden="true">✿</div>
         <span>Vivian Le</span>
       </div>
       <nav class="nav-links" aria-label="Primary">
@@ -64,6 +64,31 @@
 
 </nav>
 
+  <div class="section-rail-shell" data-section-rail>
+    <button
+      class="section-rail-toggle"
+      type="button"
+      aria-label="Open section navigation"
+      aria-expanded="false"
+      aria-controls="sectionRail"
+    >
+      <span class="section-rail-toggle__row"><span class="section-rail-toggle__dot"></span><span class="section-rail-toggle__line"></span></span>
+      <span class="section-rail-toggle__row"><span class="section-rail-toggle__dot"></span><span class="section-rail-toggle__line"></span></span>
+      <span class="section-rail-toggle__row"><span class="section-rail-toggle__dot"></span><span class="section-rail-toggle__line"></span></span>
+    </button>
+
+    <nav class="section-rail" id="sectionRail" aria-label="Section navigation" hidden>
+      <a class="section-rail__dot is-active" href="#home" data-section-link="home" aria-label="Home"></a>
+      <a class="section-rail__dot" href="#story-intro" data-section-link="story-intro" aria-label="Story"></a>
+      <a class="section-rail__dot" href="#my_wrap" data-section-link="my_wrap" aria-label="My Wrap"></a>
+      <a class="section-rail__dot" href="#projects" data-section-link="projects" aria-label="Projects"></a>
+      <a class="section-rail__dot" href="#experience" data-section-link="experience" aria-label="Experience"></a>
+      <a class="section-rail__dot" href="#education" data-section-link="education" aria-label="Education"></a>
+      <a class="section-rail__dot" href="#more-about-me" data-section-link="more-about-me" aria-label="More about me"></a>
+      <a class="section-rail__dot" href="#contact" data-section-link="contact" aria-label="Contact"></a>
+    </nav>
+  </div>
+
 
   <main class="container">
     <!-- HERO (text left, player right) -->
@@ -86,7 +111,7 @@
         </h2>
 
         <p class="lead">
-          I’m someone who loves finding meaning in messy data and turning it into ideas that feel clear, useful, and exciting.
+          I'm someone who loves finding meaning in messy data and turning it into ideas that feel clear, useful, and exciting.
         </p>
 
         <div class="cta-row">
@@ -102,7 +127,7 @@
             <svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 0 1 5.47 11.45l4.54 4.54-1.42 1.42-4.54-4.54A7 7 0 1 1 10 3zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
           </span>
           <input id="songQuery" type="text"
-                 placeholder="Type a genre, press Enter to choose my recommended background music 🎶"
+                 placeholder="Type a genre, press Enter to choose my recommended background music ðŸŽ¶"
                  aria-label="Choose your background music">
           <button type="submit" class="sr-only">Play</button>
         </form>
@@ -131,7 +156,7 @@
 
             <!-- Track text under the vinyl -->
             <div class="track-info under">
-              <div class="title" id="title">Gymnopédie No. 1</div>
+              <div class="title" id="title">GymnopÃ©die No. 1</div>
               <div class="artist" id="artist">Erik Satie</div>
             </div>
           </div>
@@ -175,7 +200,7 @@
   <section class="story-intro" id="story-intro">
     <div class="container">
       <div class="story-intro__header">
-        <span class="story-intro__eyebrow">A little more context</span>
+        <span class="story-intro__eyebrow">My Story </span>
         <h2 class="story-intro__title">I like making complex things feel clear, useful, and considered.</h2>
         <p class="story-intro__lead">
           My interest usually starts where ambiguity, systems, and people overlap. I am most engaged when I can turn scattered information into a structured direction, then shape it into something that feels elegant to use.
@@ -344,7 +369,7 @@
 
           <div class="project__desc card">
             <div class="card-body">
-              Short, scannable description. What’s the trick? What was your role?
+              Short, scannable description. What's the trick? What was your role?
             </div>
           </div>
 
@@ -365,16 +390,17 @@
         </div>
       </li>
 
-      <!-- Add more <li class="project">…</li> as needed -->
+      <!-- Add more <li class="project">â€¦</li> as needed -->
     </ol>
   </div>
 </section>  <!-- end of #projects -->
 <section id="experience" class="xp">
   <div class="container">
     <h2 class="wrap-title">My Journey<span class="dot">.</span></h2>
+    <p class="xp-intro">A timeline of how curiosity turned into real work across analytics, product, AI, and insight.</p>
 
     <div class="xp-timeline" aria-label="Experience timeline">
-      <!-- LEFT: Feb–Jun 2024 -->
+      <!-- LEFT: Feb - Jun 2024 -->
       <article class="xp-item" data-start="2024-02" data-end="2024-06" data-side="left">
         <div class="xp-card">
           <h3>February 2024 - June 2024</h3>
@@ -382,7 +408,7 @@
           <p class="xp-company">The W Solutions</p>
         </div>
       </article>
-      <!-- LEFT: Sep 2025 – Apr 2026 (long, spans year boundary) -->
+      <!-- LEFT: Sep 2025  -  Apr 2026 (long, spans year boundary) -->
       <article class="xp-item" data-start="2025-09" data-end="2026-04" data-side="left">
         <div class="xp-card">
           <h3>Sep 2025 - Present</h3>
@@ -390,7 +416,7 @@
           <p class="xp-company">University of New South Wales</p>
         </div>
       </article>
-      <!-- RIGHT: May – Oct 2025 -->
+      <!-- RIGHT: May  -  Oct 2025 -->
       <article class="xp-item" data-start="2025-05" data-end="2025-10" data-side="right">
         <div class="xp-card">
           <h3>May 2025 - October 2025</h3>
@@ -398,7 +424,7 @@
           <p class="xp-company">KPay Group</p>
         </div>
       </article>
-      <!-- RIGHT: Nov 2025 – Jan 2026 (sequential after May–Oct) -->
+      <!-- RIGHT: Nov 2025  -  Jan 2026 (sequential after May - Oct) -->
       <article class="xp-item" data-start="2025-11" data-end="2026-01" data-side="right">
         <div class="xp-card">
           <h3>Nov 2025 - Jan 2026</h3>
@@ -406,10 +432,10 @@
           <p class="xp-company">Docy AI</p>
         </div>
       </article>
-      <!-- RIGHT: Feb – Apr 2026 (sequential after Nov–Jan) -->
+      <!-- RIGHT: Feb  -  Apr 2026 (sequential after Nov - Jan) -->
       <article class="xp-item" data-start="2026-02" data-end="2026-04" data-side="right" data-company="van-cleef">
         <div class="xp-card">
-          <h3>February 2026 – Present</h3>
+          <h3>February 2026 - Present</h3>
           <p class="xp-role">Insights Analyst Intern</p>
           <p class="xp-company">Van Cleef & Arpels</p>
         </div>
@@ -423,20 +449,19 @@
     <h2 class="wrap-title">Education<span class="dot">.</span></h2>
 
     <div class="edu-split" data-reveal>
-
       <div class="edu-timeline">
         <div class="edu-spine"></div>
         <button class="edu-node active" data-target="edu-master">
           <span class="edu-node-dot"></span>
           <div class="edu-node-meta">
-            <span class="edu-node-years">2025 – 2026</span>
+            <span class="edu-node-years">2025 - 2026</span>
             <span class="edu-node-label">Master of Commerce</span>
           </div>
         </button>
         <button class="edu-node" data-target="edu-bachelor">
           <span class="edu-node-dot"></span>
           <div class="edu-node-meta">
-            <span class="edu-node-years">2022 – 2025</span>
+            <span class="edu-node-years">2022 - 2025</span>
             <span class="edu-node-label">Bachelor of Commerce</span>
           </div>
         </button>
@@ -448,7 +473,7 @@
             <div class="edu-face edu-face--front">
               <div class="edu-panel-header">
                 <span class="edu-badge">Master</span>
-                <span class="edu-dates">Aug 2025 – Nov 2026</span>
+                <span class="edu-dates">Aug 2025 - Nov 2026</span>
               </div>
               <h3 class="edu-degree">Master of Commerce</h3>
               <p class="edu-field">Data Analytics for Business</p>
@@ -497,7 +522,7 @@
             <div class="edu-face edu-face--front">
               <div class="edu-panel-header">
                 <span class="edu-badge">Bachelor</span>
-                <span class="edu-dates">Jul 2022 – Jun 2025</span>
+                <span class="edu-dates">Jul 2022  -  Jun 2025</span>
               </div>
               <h3 class="edu-degree">Bachelor of Commerce</h3>
               <p class="edu-field">Business Information Systems &amp; Data Science</p>
@@ -505,7 +530,7 @@
               <ul class="edu-highlights">
                 <li>Ranked <strong>4th</strong> in Data Structures &amp; Algorithms <span class="edu-score">(90)</span></li>
                 <li>Ranked <strong>7th</strong> in Data Governance &amp; Technology Assurance <span class="edu-score">(75)</span></li>
-                <li>Vice-Chancellor’s International Scholarship 2022</li>
+                <li>Vice-Chancellor's International Scholarship 2022</li>
                 <li>Sydney International Student Award 2022</li>
                 <li>Dalyell Scholars 2022</li>
               </ul>
@@ -532,7 +557,7 @@
                 <div class="edu-detail-block">
                   <h4>Scholarships and programs</h4>
                   <ul>
-                    <li>Vice-Chancellor’s International Scholarship 2022</li>
+                    <li>Vice-Chancellor's International Scholarship 2022</li>
                     <li>Sydney International Student Award 2022</li>
                     <li>Dalyell Scholars 2022</li>
                   </ul>
@@ -549,7 +574,7 @@
       <div class="edu-trophy" data-reveal>
         <span class="edu-trophy-place">2nd</span>
         <div class="edu-trophy-info">
-          <span class="edu-trophy-name">SCC × Business School Case Competition</span>
+          <span class="edu-trophy-name">SCC x Business School Case Competition</span>
           <span class="edu-trophy-year">2026</span>
         </div>
       </div>
@@ -563,8 +588,8 @@
       <div class="edu-trophy" data-reveal>
         <span class="edu-trophy-place">2nd</span>
         <div class="edu-trophy-info">
-          <span class="edu-trophy-name">Microsoft × US Case Competition</span>
-          <span class="edu-trophy-year">2024 · invited to Microsoft HQ</span>
+          <span class="edu-trophy-name">Microsoft x USYD Case Competition</span>
+          <span class="edu-trophy-year">2024 - invited to Microsoft HQ</span>
         </div>
       </div>
       <div class="edu-trophy" data-reveal>
@@ -575,7 +600,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 <section id="more-about-me" class="more-about-me">
@@ -682,7 +706,7 @@
   <div class="container contact-inner">
     <h2 class="contact-title">Contact<span class="dot">.</span></h2>
     <p class="contact-lead">
-      Got a question, project, or idea? Let’s chat.
+      Got a question, project, or idea? Let's chat.
     </p>
 
     <form class="contact-form" autocomplete="on">
@@ -724,5 +748,4 @@
 <script src="search-toggle.js" defer></script>
 </body>
 </html>
-
 

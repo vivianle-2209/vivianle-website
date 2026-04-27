@@ -679,6 +679,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const startYear = Math.floor(minM / 12);
   const endYear   = Math.floor(maxM / 12);
   const rangeEndExclusive = maxM + 1;
+  const yearMilestones = {
+    2024: "Where it became real",
+    2025: "A year of acceleration",
+    2026: "Growing into the work I want"
+  };
 
   // Merge all covered time ranges so we can find empty gaps between experiences
   const MAX_GAP_MONTHS = 3; // any gap longer than this is visually capped
@@ -750,7 +755,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bubble = document.createElement("div");
     bubble.className = "xp-year";
-    bubble.textContent = yr;
+    bubble.innerHTML = `<span class="xp-year__num">${yr}</span>`;
+    if (yearMilestones[yr]) {
+      const note = document.createElement("span");
+      note.className = "xp-year__label";
+      if (yr === 2025) note.classList.add("xp-year__label--left");
+      if (yr === 2026) note.classList.add("xp-year__label--above");
+      note.textContent = yearMilestones[yr];
+      bubble.appendChild(note);
+    }
     bubble.style.top = yPx + "px";
     timeline.appendChild(bubble);
   }
@@ -775,26 +788,29 @@ const totalItems = document.querySelectorAll('.carousel-item').length;
 let currentIndex = 0;
 
 function updateCarousel() {
+  if (!carouselInner) return;
   carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-leftBtn.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    currentIndex = totalItems - 1; // Loop to the last item
-  }
-  updateCarousel();
-});
+if (leftBtn && rightBtn && carouselInner && totalItems) {
+  leftBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = totalItems - 1; // Loop to the last item
+    }
+    updateCarousel();
+  });
 
-rightBtn.addEventListener('click', () => {
-  if (currentIndex < totalItems - 1) {
-    currentIndex++;
-  } else {
-    currentIndex = 0; // Loop to the first item
-  }
-  updateCarousel();
-});
+  rightBtn.addEventListener('click', () => {
+    if (currentIndex < totalItems - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // Loop to the first item
+    }
+    updateCarousel();
+  });
+}
 /* ============================ END OF CAROUSEL CONTROLS ============================ */
 
 
@@ -833,4 +849,78 @@ rightBtn.addEventListener('click', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') close();
   });
+})();
+
+/* ============================ SECTION RAIL ============================ */
+(function sectionRail() {
+  const shell = document.querySelector('[data-section-rail]');
+  const rail = shell ? shell.querySelector('.section-rail') : null;
+  const toggle = shell ? shell.querySelector('.section-rail-toggle') : null;
+  const railLinks = rail ? [...rail.querySelectorAll('[data-section-link]')] : [];
+  if (!shell || !rail || !toggle || !railLinks.length) return;
+
+  const sectionIds = railLinks.map(link => link.dataset.sectionLink);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  if (!sections.length) return;
+
+  function setOpen(open) {
+    shell.classList.toggle('is-open', open);
+    rail.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close section navigation' : 'Open section navigation');
+  }
+
+  function setActive(id) {
+    railLinks.forEach(link => {
+      const isActive = link.dataset.sectionLink === id;
+      link.classList.toggle('is-active', isActive);
+      link.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  railLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      const id = link.dataset.sectionLink;
+      const target = document.getElementById(id);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActive(id);
+      setOpen(false);
+    });
+  });
+
+  toggle.addEventListener('click', () => {
+    setOpen(!shell.classList.contains('is-open'));
+  });
+
+  document.addEventListener('click', event => {
+    if (!shell.classList.contains('is-open')) return;
+    if (!shell.contains(event.target)) {
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && shell.classList.contains('is-open')) {
+      setOpen(false);
+    }
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (visible && visible.target && visible.target.id) {
+      setActive(visible.target.id);
+    }
+  }, {
+    threshold: [0.2, 0.45, 0.7],
+    rootMargin: '-18% 0px -35% 0px'
+  });
+
+  sections.forEach(section => observer.observe(section));
+  setActive(sectionIds[0]);
+  setOpen(false);
 })();
