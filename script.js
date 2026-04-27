@@ -939,3 +939,62 @@ if (leftBtn && rightBtn && carouselInner && totalItems) {
   setActive(sectionIds[0]);
   setOpen(false);
 })();
+
+/* ============================ CONTACT FORM ============================ */
+(function contactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const submitBtn = form.querySelector('[data-contact-submit]');
+  const statusEl = form.querySelector('[data-contact-status]');
+  const endpoint = form.getAttribute('action') || '';
+  const defaultButtonText = submitBtn ? submitBtn.textContent : '';
+
+  function setStatus(message, type) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.remove('is-success', 'is-error');
+    if (type) statusEl.classList.add(type);
+  }
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    if (!endpoint || endpoint.includes('REPLACE_WITH_YOUR_FORM_ID')) {
+      setStatus('Replace the Formspree form ID in index.html before this can send.', 'is-error');
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+    setStatus('Sending your message...', null);
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      form.reset();
+      setStatus("Thanks — your message has been sent. I'll get back to you soon.", 'is-success');
+    } catch (error) {
+      setStatus('Something went wrong. Please try again or use "Email me directly".', 'is-error');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultButtonText;
+      }
+    }
+  });
+})();

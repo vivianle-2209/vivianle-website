@@ -710,26 +710,39 @@
       Got a question, project, or idea? Let's chat.
     </p>
 
-    <form class="contact-form" autocomplete="on">
+    <form
+      id="contactForm"
+      class="contact-form"
+      action="https://formspree.io/f/xdayvjbb"
+      method="POST"
+      autocomplete="on"
+    >
       <div class="field">
         <label for="cname">Name</label>
-        <input id="cname" name="name" type="text" placeholder="Your name" />
+        <input id="cname" name="name" type="text" placeholder="Your name" required />
       </div>
 
       <div class="field">
         <label for="cemail">Email</label>
-        <input id="cemail" name="email" type="email" placeholder="you@example.com" />
+        <input id="cemail" name="email" type="email" placeholder="you@example.com" required />
       </div>
 
       <div class="field">
         <label for="cmsg">Message</label>
-        <textarea id="cmsg" name="message" rows="4" placeholder="Leave me anything"></textarea>
+        <textarea id="cmsg" name="message" rows="4" placeholder="Leave me anything" required></textarea>
+      </div>
+
+      <input type="hidden" name="_subject" value="New portfolio message from vivianle-website" />
+      <div class="contact-honeypot" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
       </div>
 
       <div class="actions">
-        <button type="submit" class="btn contact-btn">Send message</button>
-        <a href="mailto:vivianle.contact@email.com" class="btn contact-btn alt">Email me</a>
+        <button type="submit" class="btn contact-btn" data-contact-submit>Send message</button>
+        <a href="mailto:vivianle.contact@email.com" class="btn contact-btn alt">Email me directly</a>
       </div>
+      <p class="contact-status" data-contact-status aria-live="polite"></p>
     </form>
 
     <div class="contact-mini">
